@@ -1,10 +1,13 @@
-<mat-card *ngIf="park.name">
+<mat-card>
   <mat-card-header>
-    <mat-card-title>{{park.name}}</mat-card-title>
-    <mat-card-subtitle>Located in: {{park.states}}</mat-card-subtitle>
+    <mat-card-title class="w-100" *ngIf="park === undefined; else details">Park Details</mat-card-title>
+    <ng-template #details>
+      <mat-card-title>{{park.name}}</mat-card-title>
+      <mat-card-subtitle>Located in: {{park.states}}</mat-card-subtitle>
+    </ng-template>
   </mat-card-header>
-  <img mat-card-image src="{{park.images[0].url}}" alt="National park image">
-  <mat-card-content>
+  <img *ngIf="park" mat-card-image src="{{park.images[0].url}}" alt="National park image">
+  <mat-card-content *ngIf="park.name">
     <h4 matLine>{{park.description}}</h4>
     <div matLine>
       <span class="label">Entrance Fee:</span><span> {{park.entranceFees[0].title}}</span><span *ngIf="park.entranceFees[0].cost !== '0.0000'"> - {{park.entranceFees[0].cost | currency}}</span>

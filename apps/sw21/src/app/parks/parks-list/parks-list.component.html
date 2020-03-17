@@ -1,8 +1,9 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>National Parks</mat-card-title>
+    <mat-card-title class="w-100">National Parks</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <mat-spinner *ngIf="!parks.total"></mat-spinner>
     <mat-list>
       <mat-list-item *ngFor="let park of (parks.data)" (click)="selected.emit(park)">
         <h4 matLine>{{park.name}}</h4>
