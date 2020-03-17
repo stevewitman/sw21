@@ -8,6 +8,7 @@ import { CoreDataModule } from '@bb/core-data';
 import { CoreStateModule } from '@bb/core-state';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ParksComponent } from './parks/parks.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ParksComponent } from './parks/parks.component';
     UiToolbarModule,
     CoreDataModule,
     CoreStateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
