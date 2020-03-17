@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 const BASE_URL = 'http://api.nps.gov/api/v1';
 const MODEL = 'parks';
+const API_KEY = '&api_key=HHnMMu4jZCSfxlLugNhmhoIbHkgUUVpKXCPqH3fw'
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +18,7 @@ export class ParksService {
   }
 
   private getUrl(): string {
-    return `${BASE_URL}/${MODEL}`;
-  }
-
-  private getUrlWithId(id: string): string {
-    return `${this.getUrl()}/${id}`;
+    return `${BASE_URL}/${MODEL}${API_KEY}`;
   }
 
 }

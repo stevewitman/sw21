@@ -9,11 +9,15 @@ import { CoreStateModule } from '@bb/core-state';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ParksComponent } from './parks/parks.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ParksListComponent } from './parks/parks-list/parks-list.component';
+import { ParkDetailsComponent } from './parks/park-details/park-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ParksComponent
+    ParksComponent,
+    ParksListComponent,
+    ParkDetailsComponent
   ],
   imports: [
     BrowserModule,

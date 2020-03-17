@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ParksService } from '@bb/core-data';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'bb-parks',
@@ -8,18 +7,22 @@ import { Observable } from 'rxjs';
   styleUrls: ['./parks.component.scss']
 })
 export class ParksComponent implements OnInit {
-  parks;
+  @Input() parks$;
+  @Input() park;
 
   constructor(private parksService: ParksService) { }
 
   ngOnInit(): void {
-    console.log('HERE');
     this.getParks();
   }
 
+  select(park) {
+    this.park = park;
+  }
+
   private getParks() {
-    return this.parksService.all()
-      .subscribe((res) => this.parks = {
+    this.parks$ = this.parksService.all()
+      .subscribe((res) => this.parks$ = {
         total:  res['total'],
         data: res['data']
     });

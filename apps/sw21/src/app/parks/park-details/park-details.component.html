@@ -1,0 +1,18 @@
+<mat-card *ngIf="park.name">
+  <mat-card-header>
+    <mat-card-title>{{park.name}}</mat-card-title>
+    <mat-card-subtitle>Located in: {{park.states}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{park.images[0].url}}" alt="National park image">
+  <mat-card-content>
+    <h4 matLine>{{park.description}}</h4>
+    <div matLine>
+      <span class="label">Entrance Fee:</span><span> {{park.entranceFees[0].title}}</span><span *ngIf="park.entranceFees[0].cost !== '0.0000'"> - {{park.entranceFees[0].cost | currency}}</span>
+      <h5>{{park.entranceFees[0].description}}</h5>
+    </div>
+    <mat-card-actions>
+      <a href="{{park.url}}"><button mat-raised-button (click)="visited.emit(park.url)">visit website</button></a>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
+

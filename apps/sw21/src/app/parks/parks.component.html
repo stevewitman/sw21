@@ -1,6 +1,17 @@
-<ul>
-  <li *ngFor="let park of (parks.data)">{{park.name}}</li>
-
-</ul>
+<div class="container d-flex mt-3">
+  <div class="row">
+    <div class="col-5">
+      <bb-parks-list
+        [parks]="parks$"
+        (selected)="select($event)"
+      ></bb-parks-list>
+    </div>
+    <div class="col-7">
+      <bb-park-details
+        [park]="park"
+      ></bb-park-details>
+    </div>
+  </div>
+</div>
 
 
