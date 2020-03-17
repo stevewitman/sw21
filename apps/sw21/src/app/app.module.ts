@@ -7,10 +7,12 @@ import { UiToolbarModule } from '@bb/ui-toolbar';
 import { CoreDataModule } from '@bb/core-data';
 import { CoreStateModule } from '@bb/core-state';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ParksComponent } from './parks/parks.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParksComponent
   ],
   imports: [
     BrowserModule,
